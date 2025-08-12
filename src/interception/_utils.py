@@ -36,7 +36,7 @@ def to_interception_coordinate(x: int, y: int) -> tuple[int, int]:
     """
 
     def scale(metric_index: int, point: int) -> int:
-        return point * 0xFFFF // win32api.GetSystemMetrics(metric_index) + 1
+        return point * 0x10000 // win32api.GetSystemMetrics(metric_index) + 1
 
     return scale(0, x), scale(1, y)
 
